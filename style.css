@@ -1,0 +1,1123 @@
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #050510;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+}
+
+
+/* =========================================================
+   SCREEN SYSTEM
+   ========================================================= */
+
+.screen {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 2.2s ease,
+        visibility 2.2s ease;
+
+    z-index: 1;
+}
+
+
+.screen.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   OPENING SCREEN
+   ========================================================= */
+
+.opening-screen {
+    background:
+        radial-gradient(
+            circle at 50% 100%,
+            #253b91 0%,
+            #121744 35%,
+            #080a22 70%,
+            #02030c 100%
+        );
+}
+
+
+.opening-content {
+    width: min(900px, 90%);
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    animation:
+        openingAppear 1.5s ease both;
+}
+
+
+.eyebrow {
+    margin-bottom: 18px;
+
+    font-size:
+        clamp(
+            0.65rem,
+            2vw,
+            0.95rem
+        );
+
+    letter-spacing:
+        clamp(
+            2px,
+            0.8vw,
+            5px
+        );
+
+    text-transform: uppercase;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+}
+
+
+.opening-content h1 {
+    font-size:
+        clamp(
+            2.8rem,
+            10vw,
+            8rem
+        );
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #b8d2ff,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    text-shadow:
+        0 0 25px
+        rgba(
+            120,
+            170,
+            255,
+            0.5
+        );
+}
+
+
+.subtitle {
+    margin-top: 20px;
+
+    font-size:
+        clamp(
+            0.9rem,
+            3vw,
+            1.4rem
+        );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.main-button {
+    margin-top: 35px;
+
+    padding: 14px 28px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.3
+        );
+
+    border-radius: 999px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    color: white;
+
+    font-size:
+        clamp(
+            0.75rem,
+            2vw,
+            0.95rem
+        );
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.8s ease;
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+}
+
+
+.main-button:hover {
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(
+            130,
+            170,
+            255,
+            0.4
+        );
+}
+
+
+.main-button:active {
+    transform:
+        scale(0.96);
+}
+
+
+/* =========================================================
+   BIRTHDAY SCREEN
+   ========================================================= */
+
+.birthday-screen {
+    background:
+        radial-gradient(
+            circle at 50% 100%,
+            #3b1b78 0%,
+            #181044 40%,
+            #09081f 75%,
+            #02030c 100%
+        );
+}
+
+
+/* =========================================================
+   BIRTHDAY CONTENT
+   ========================================================= */
+
+.birthday-content {
+    width: 100%;
+    height: 100%;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro-area {
+    width: 100%;
+
+    height: 8vh;
+
+    min-height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+
+.intro-area p {
+    font-size:
+        clamp(
+            0.75rem,
+            2vw,
+            1.1rem
+        );
+
+    letter-spacing:
+        clamp(
+            1px,
+            0.4vw,
+            3px
+        );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+}
+
+
+/* =========================================================
+   CAKE AREA
+   ========================================================= */
+
+.cake-area {
+    width: 100%;
+
+    height: 42vh;
+
+    min-height: 230px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 1;
+}
+
+
+/* =========================================================
+   CAKE
+   ========================================================= */
+
+.cake {
+    position: relative;
+
+    width:
+        clamp(
+            190px,
+            35vw,
+            330px
+        );
+
+    height:
+        clamp(
+            170px,
+            30vw,
+            260px
+        );
+}
+
+
+/* =========================================================
+   PLATE
+   ========================================================= */
+
+.cake-plate {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    transform:
+        translateX(-50%);
+
+    width: 115%;
+
+    height: 13px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #edf4ff,
+            #91a8d0
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            0,
+            0,
+            0,
+            0.5
+        );
+}
+
+
+/* =========================================================
+   CAKE LAYERS
+   ========================================================= */
+
+.cake-layer {
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 10px;
+
+    box-shadow:
+        inset 0 -8px
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        ),
+        0 8px 15px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+}
+
+
+.cake-bottom {
+    bottom: 15px;
+
+    width: 100%;
+
+    height: 65px;
+
+    background:
+        linear-gradient(
+            #814a32,
+            #48251d
+        );
+}
+
+
+.cake-middle {
+    bottom: 70px;
+
+    width: 90%;
+
+    height: 58px;
+
+    background:
+        linear-gradient(
+            #995b3e,
+            #592e22
+        );
+}
+
+
+.cake-upper {
+    bottom: 120px;
+
+    width: 80%;
+
+    height: 55px;
+
+    background:
+        linear-gradient(
+            #b36d4c,
+            #6a3728
+        );
+}
+
+
+/* =========================================================
+   FROSTING
+   ========================================================= */
+
+.cake-top {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+
+    bottom: 162px;
+
+    transform:
+        translateX(-50%);
+
+    width: 80%;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            #fffaff,
+            #ffd8ec
+        );
+}
+
+
+/* =========================================================
+   DRIPS
+   ========================================================= */
+
+.drip {
+    position: absolute;
+
+    top: 50%;
+
+    width: 18px;
+
+    height: 25px;
+
+    background: #ffd8ec;
+
+    border-radius:
+        0 0 50% 50%;
+}
+
+
+.drip-1 {
+    left: 10%;
+}
+
+
+.drip-2 {
+    left: 30%;
+}
+
+
+.drip-3 {
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+.drip-4 {
+    right: 30%;
+}
+
+
+.drip-5 {
+    right: 10%;
+}
+
+
+/* =========================================================
+   CANDLES
+   ========================================================= */
+
+.candle {
+    position: absolute;
+
+    z-index: 20;
+
+    bottom: 170px;
+
+    width: 15px;
+
+    height: 58px;
+
+    border-radius: 4px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #ffffff 0px,
+            #ffffff 7px,
+            #d5e1ff 7px,
+            #d5e1ff 13px
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(
+            255,
+            255,
+            255,
+            0.25
+        );
+}
+
+
+.candle-left {
+    left: 28%;
+}
+
+
+.candle-center {
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+.candle-right {
+    right: 28%;
+}
+
+
+/* =========================================================
+   FLAMES
+   ========================================================= */
+
+.flame {
+    position: absolute;
+
+    left: 50%;
+
+    top: -24px;
+
+    width: 18px;
+
+    height: 27px;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+
+    border-radius:
+        50% 50% 50% 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffbd0,
+            #ffc107,
+            #ff5700
+        );
+
+    box-shadow:
+        0 0 10px #ffb000,
+        0 0 25px
+        rgba(
+            255,
+            140,
+            0,
+            0.7
+        );
+
+    animation:
+        flicker
+        0.15s
+        infinite
+        alternate;
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.flame.extinguished {
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        translateY(10px)
+        scale(0.05);
+
+    animation: none;
+}
+
+
+@keyframes flicker {
+    from {
+        transform:
+            translateX(-50%)
+            rotate(42deg)
+            scale(0.9);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            rotate(48deg)
+            scale(1.1);
+    }
+}
+
+
+/* =========================================================
+   WISH AREA
+   ========================================================= */
+
+.wish-area {
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+.wish-area h2 {
+    font-size:
+        clamp(
+            1.8rem,
+            5vw,
+            3.5rem
+        );
+
+    line-height: 1;
+}
+
+
+.wish-area p {
+    margin-top: 10px;
+
+    font-size:
+        clamp(
+            0.75rem,
+            2vw,
+            1rem
+        );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+}
+
+
+/* =========================================================
+   BLOW BUTTON
+   ========================================================= */
+
+.blow-button {
+    margin-top: 20px;
+}
+
+
+.blow-button.hidden {
+    opacity: 0;
+
+    transform:
+        scale(0.7);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FIREWORK CANVAS
+   ========================================================= */
+
+#fireworksCanvas {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 50;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease;
+}
+
+
+/* =========================================================
+   FINAL MESSAGE
+   ========================================================= */
+
+.final-message {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 60;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 2s ease,
+        visibility 2s ease;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(55, 20, 100, 0.95),
+            rgba(3, 4, 15, 0.98)
+        );
+}
+
+
+.final-message.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+.final-content {
+    width:
+        min(
+            850px,
+            100%
+        );
+
+    transform:
+        translateY(30px)
+        scale(0.96);
+
+    transition:
+        transform 2s ease;
+}
+
+
+.final-message.show
+.final-content {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+.final-small {
+    font-size:
+        clamp(
+            0.65rem,
+            2vw,
+            0.9rem
+        );
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+}
+
+
+.final-content h2 {
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            3rem,
+            11vw,
+            8rem
+        );
+
+    line-height: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ffd8ed,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    text-shadow:
+        0 0 35px
+        rgba(
+            255,
+            180,
+            225,
+            0.5
+        );
+}
+
+
+.final-text {
+    margin-top: 25px;
+
+    font-size:
+        clamp(
+            0.85rem,
+            3vw,
+            1.3rem
+        );
+
+    line-height: 1.6;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+}
+
+
+/* =========================================================
+   OPENING ANIMATION
+   ========================================================= */
+
+@keyframes openingAppear {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .birthday-content {
+        padding: 12px;
+    }
+
+    .intro-area {
+        height: 9vh;
+    }
+
+    .cake-area {
+        height: 38vh;
+
+        min-height: 210px;
+    }
+
+    .cake {
+        transform:
+            scale(0.82);
+    }
+
+    .wish-area h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* =========================================================
+   SHORT SCREENS
+   ========================================================= */
+
+@media (max-height: 650px) {
+
+    .birthday-content {
+        padding: 8px;
+    }
+
+    .intro-area {
+        height: 7vh;
+    }
+
+    .cake-area {
+        height: 38vh;
+    }
+
+    .cake {
+        transform:
+            scale(0.7);
+    }
+
+    .wish-area h2 {
+        font-size: 1.6rem;
+    }
+
+    .wish-area p {
+        margin-top: 5px;
+    }
+
+    .blow-button {
+        margin-top: 10px;
+
+        padding:
+            10px 20px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONES
+   ========================================================= */
+
+@media (
+    max-height: 600px
+)
+and (
+    orientation: landscape
+) {
+
+    .cake {
+        transform:
+            scale(0.58);
+    }
+
+    .intro-area {
+        height: 7vh;
+    }
+
+    .cake-area {
+        height: 43vh;
+    }
+
+    .wish-area h2 {
+        font-size: 1.4rem;
+    }
+
+    .wish-area p {
+        margin-top: 3px;
+    }
+
+    .blow-button {
+        margin-top: 5px;
+
+        padding:
+            7px 18px;
+    }
+}
+
+
+/* =========================================================
+   LARGE SCREENS
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+    .cake {
+        transform:
+            scale(1.05);
+    }
+}
+.surprise-link {
+    display: inline-block;
+    margin-top: 40px;
+}
